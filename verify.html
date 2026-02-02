@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify Items - BillCheck</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">💰 Bill<b>Check</b></div>
+  <div style="color: var(--text-muted)">Verify Items</div>
+</header>
+
+<main class="page">
+
+  <h1>Verify Your Items</h1>
+
+  <div class="action-buttons">
+    <button class="btn outline" onclick="toggleAll(true)">✓ Mark All Received</button>
+    <button class="btn outline" onclick="toggleAll(false)">✕ Clear All</button>
+  </div>
+
+  <div class="summary-grid">
+    <div class="stat-card">
+      <h2 id="totalCount">0</h2>
+      <p>Total Items</p>
+    </div>
+    <div class="stat-card green-bg">
+      <h2 id="receivedCount" class="green-text">0</h2>
+      <p>Received</p>
+    </div>
+    <div class="stat-card red-bg">
+      <h2 id="missingCount" class="red-text">0</h2>
+      <p>Missing</p>
+    </div>
+  </div>
+
+  <div id="itemList"></div>
+
+  <div class="sticky-footer">
+    <div class="footer-content">
+      <div>
+        <p class="muted">Verified Amount</p>
+        <strong id="verifiedAmt">₹ 0.00</strong>
+        <span class="muted">of <span id="totalBillAmt">₹ 0.00</span></span>
+      </div>
+      <button class="action-btn" onclick="goToSummary()">View Summary →</button>
+    </div>
+    <div class="progress-container">
+      <div id="footerProgress" class="fill"></div>
+    </div>
+  </div>
+
+</main>
+
+<script src="verify.js"></script>
+</body>
+</html>
