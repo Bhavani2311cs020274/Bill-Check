@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Summary - BillCheck</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">💰 Bill<b>Check</b></div>
+  </header>
+
+  <main class="page" style="text-align:center;">
+
+    <div class="warning-icon">📊</div>
+
+    <h1 id="sumTitle">0 Items Missing</h1>
+    <p style="color: var(--text-muted)">
+      Summary of verified and missing items
+    </p>
+
+    <!-- RECEIVED / MISSING -->
+    <div class="summary-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="stat-card" style="text-align:left;">
+        <p>✓ Received Items</p>
+        <h2 id="sumRecCount">0</h2>
+        <span id="sumRecVal" style="color: var(--success)">₹ 0.00</span>
+      </div>
+
+      <div class="stat-card" style="text-align:left;">
+        <p>✕ Missing Items</p>
+        <h2 id="sumMisCount">0</h2>
+        <span id="sumMisVal" style="color: var(--danger)">₹ 0.00</span>
+      </div>
+    </div>
+
+    <!-- TAX & GRAND TOTAL -->
+    <div class="summary-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="stat-card" style="text-align:left;">
+        <p>🧾 Tax</p>
+        <h2 id="taxVal">₹ 0.00</h2>
+      </div>
+
+      <div class="stat-card" style="text-align:left;">
+        <p>💰 Grand Total</p>
+        <h2 id="grandTotal">₹ 0.00</h2>
+      </div>
+    </div>
+
+    <!-- VERIFICATION RATE -->
+    <div class="verif-rate-card">
+      <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem">
+        <span>Verification Rate</span>
+        <strong id="ratePerc">0%</strong>
+      </div>
+      <div class="progress-container">
+        <div id="rateFill" class="progress-fill" style="background: var(--success)"></div>
+      </div>
+    </div>
+
+    <!-- MISSING ITEMS LIST -->
+    <div style="text-align:left; background:#fff5f5; border-radius:12px; padding:1rem;">
+      <h3 style="margin-top:0;">📉 Missing Items</h3>
+      <div id="finalMissingList"></div>
+    </div>
+
+    <button class="btn-primary" style="width:100%; margin-top:2rem;"
+      onclick="location.href='index.html'">
+      Upload Another Bill
+    </button>
+
+  </main>
+
+  <script src="summary.js"></script>
+</body>
+</html>
